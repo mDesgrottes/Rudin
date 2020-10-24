@@ -1,0 +1,145 @@
+\documentclass{article}
+\usepackage{amsmath}
+\renewcommand{\baselinestretch}{1.05}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\usepackage{amsmath,amsthm,verbatim,amssymb,amsfonts,amscd, graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{bigfoot} % to allow verbatim in footnote
+\usepackage[numbered,framed]{matlab-prettifier}
+\usepackage{filecontents}
+\usepackage{graphics}
+\topmargin0.0cm
+\headheight0.0cm
+\headsep0.0cm
+\oddsidemargin0.0cm
+\textheight23.0cm
+\textwidth16.5cm
+\footskip1.0cm
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem*{surfacecor}{Corollary 1}
+\newtheorem{conjecture}{Conjecture} 
+\newtheorem{question}{Question} 
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\title{Chapter 2}
+\author{Mike Desgrottes}
+\date{October 2020}
+
+\begin{document}
+\maketitle
+
+\begin{theorem}
+	Prove that the empty set is a subset of every set.
+\end{theorem}
+
+\begin{proof}
+	Let W be a set, then $W \bigcup \emptyset = W \implies \emptyset \subset W$
+\end{proof}
+
+\begin{theorem}
+	A complex number is said to be algebraic if there are integers $a_{0},...,a_{n}$ not all zero such that $$a_{0}z^{n} + a_{1}z^{n - 1} + ... + a_{n - 1}z + a_{n} = 0 $$. Prove that the set of all algebraic numbers is countable.
+\end{theorem}
+
+\begin{proof}
+	For each $N \in \mathbb{N}$, the number of polynomials such that $n + |a_{0}| + |a_{1}| + ... + |a_{n}| = N$ is finite. Hence the number of roots of these polynomial is also finite. Let $U_{n,N}$ be the set of roots of polynomial such that $$n + |a_{0}| + |a_{1}| + ... + |a_{n}| = N $$ and let $U_{n} = \bigcup_{i = 1}^{\infty} U_{n,i}$. The map $$n + |a_{0}| + ... + |a_{n}| \to (n,a_{0},...,a_{n}) $$ ensure that $U_{n}$ is isomorphic to $\mathbb{Z}^{n + 1}$. $U_{n}$ and $\bigcup_{n = 1}^{\infty} U_{n}$ is countable.
+\end{proof}
+
+\begin{theorem}
+	Prove that there exists real numbers which are not algebraic.
+\end{theorem}
+
+\begin{proof}
+	Let $A$ be the set of all algebraic numbers. A is countable. As $\mathbb{R}$ is uncountable, $\mathbb{R}$ cannot be a subset of A.
+\end{proof}
+
+\begin{theorem}
+	Prove that the set of irrational numbers is uncountable.
+\end{theorem}
+
+\begin{proof}
+	$\mathbb{R} = \mathbb{Q} \bigcup \mathbb{I}$ implies that $\mathbb{I}$ contains an uncountable set.
+\end{proof}
+
+\begin{theorem}
+	Construct a bounded set of real numbers with exactly 3 limit points.
+\end{theorem}
+
+\begin{proof}
+	$\{ \frac{1}{n}: n \in \mathbb{N} \} \bigcup \{1 + \frac{1}{n}: n \in \mathbb{N}\} \bigcup \{ 2 + \frac{1}{n}: n \in \mathbb{N} \}$ with limit points $\{0,1,2\}$
+\end{proof}
+
+\begin{theorem}
+	Let K be a subset of real numbers with 0 and $1/n$. Prove that K is compact directly from definition.
+\end{theorem}
+
+\begin{proof}
+	Let $\bigcup_{i = 1}^{\infty} U_{i}$ be an open cover of K. There exists $i$ such that $0 \in U_{i}$. This interval will contain infinitely many element of K. Thus, there are only finitely many number of elements not in $U_{i}$. The finite subcover $U_{i} \bigcup (\bigcup_{n = 1}^{m} U_{n})$ is finite subcover of K.
+\end{proof}
+
+\begin{theorem}
+	Construct a compact set of real numbers whose limit points form a countable set.
+\end{theorem}
+
+\begin{proof}
+	Let $U_{i} = \{ i + \frac{1}{n}: n \in \mathbb{N} \}$, then $\{0\} \bigcup \mathbb{N} \bigcup (\bigcup_{n = 1}^{\infty} U_{n})$
+\end{proof}
+
+\begin{theorem}
+	Give an example of an open cover of $(0,1)$ which has no finite subcover.
+\end{theorem}
+\begin{proof}
+	$\bigcup_{n = 1}^{\infty} (0, 1 - \frac{1}{n})$
+\end{proof}
+
+\begin{theorem}
+	(a) If A and B are disjoint closed(open) sets in some metric space X, prove that they are seperated.
+
+	(b) Fix $p \in X$, $\delta > 0$, define A to be the set of all $q \in X$ for which $| x - y | < \delta$, define B similarly, with $<$. Prove that A and B are seperated.
+
+	(c) Prove that every connected metric space with at least two points is uncountable.
+
+\end{theorem}
+
+\begin{proof}
+	(a) Closed sets contains their limit points and $A \bigcap \overline{B} = \overline{A} \bigcap B = \emptyset$. If A and B are disjoint open set, then their complement is closed and the result follows.
+
+	(b) $A = \{ x \in X: |x - p| < \delta \}$ and $B = \{x \in X: |x - p| > \delta \}$ are disjoint open sets and hence are seperated.
+
+	(c) Let $c \in \mathbb{R}$ such that there is no pair of points in A such that their distance is c. By previous excersies, we can seperate X, which is a contradiction. Therefore, for all real numbers, there exists a $y \in A$ such that $|x - y| = c$ which implies it contains an uncountable set.
+\end{proof}
+
+\begin{theorem}
+	A metric space is seperable if it contains a countable dense subset. Show that $\mathbb{R}^{k}$ is seperable.
+\end{theorem}
+
+\begin{proof}
+	$\mathbb{Q}^{k}$ is a countable dense subset of $\mathbb{R}^{k}$.
+\end{proof}
+
+\begin{theorem}
+	Prove that every seperable metric space has a countable base.
+\end{theorem}
+\begin{proof}
+	The metric space have a countable dense subset $E$. Hence between any two elements in X, there exists an element of E. Take $(y - r, r + y)$ with r,y being rational. The set of these interval is countable and contains x.  
+\end{proof}
+\begin{theorem}
+Let X be a metric space in which every infinite subset has a limit point. Prove that X is seperable.
+\end{theorem}
+
+\begin{proof}
+	Let $\delta > 0$, then we pick $x_{1} \in X$,a nd having chosen $x_{1},...,x_{j}$, we pick $x_{j + 1}$ such that $|x_{j} - x_{j + 1}| \geq \delta$. The sequence we chose is an infinite subset of X and has limit point. Therefore, it must terminate at a finite point. $U_{i} = (x_{i} - \delta, x_{i} + \delta)$ are finite open sets that cover X. The triangle inequality prevent any element of X to be too close to two points of $U_{i}$. Hence, every point in X belongs to at least one $U_{i}$. $\bigcup_{i = 1}^{\infty} U_{i}$ with $\delta = 1/n$ is a countable dense subset.
+\end{proof}
+
+\begin{theorem}
+	Prove that every compact metric space K has a countable base, and that K is therefore seperable.
+\end{theorem}
+
+\begin{proof}
+	The set $A_{x} = ( x - \frac{1}{n}, x + \frac{1}{n})$ form an open cover of K and hence it contains a finite subcover. So, for each n, there exists a finite set of points such that neighborhood around those points with radius 1/n cover K. By previous exercise, it is seperable.
+\end{proof}
+\end{document}
+
