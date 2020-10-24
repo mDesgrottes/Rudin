@@ -32,6 +32,86 @@
 \begin{document}
 \maketitle
 
+\section{I}
 
+\begin{theorem}
+	If $r$ is rational ($r \not = 0$) and $x$ is irrational. Prove that $r + x$ and $rx$ are irrational.
+\end{theorem}
+
+\begin{proof}
+	Suppose that $r + x$ and $rx$ were rational with $r + x = \frac{p}{q}$ and $rx = \frac{a}{b}$. Then we see that $x = \frac{a}{rb} = \frac{p - qr}{q}$ which is a contradiction.
+\end{proof}
+
+\begin{theorem}
+	Prove that there is no rational number whose square is 12.
+\end{theorem}
+\begin{proof}
+	Let $12 = \frac{p^{2}}{q^{2}}$ with $(p,q) = 1$. $$12q^{2} = p^{2} \implies 2\sqrt{3}q = p \implies 3 | p $$ and $$3 = \frac{p^{2}}{4q^{2}} = \frac{3k}{4q^{2}} \implies (p,q) \geq  3 $$ which is a contradiction.
+\end{proof}
+
+\begin{theorem}
+	Prove the following
+
+	(a) If $x \not = 0$, $xy = xz \implies y = z$
+
+	(b) If $x \not = 0$, $xy = x \implies x = 1$
+
+	(c) If $x \not = 0$, $xy = 1 \implies y = \frac{1}{x}$
+
+	(d) If $x \not = 0$ $\frac{1}{\frac{1}{x}} = x$
+\end{theorem}
+
+\begin{proof}
+	(a) $xy = xz \implies x^{-1}(xz) = x^{-1}(xy) \implies x = y$
+
+	(b) $xy = x \implies x^{-1}xy = x^{-1}x \implies y = 1$
+
+	(c) $xy = 1 \implies x^{-1}(xy) = x^{-1} \implies y = x^{-1} = \frac{1}{x}$
+
+	(d) $(\frac{1}{x})(\frac{1}{\frac{1}{x}}) = \frac{x}{x} = 1$
+\end{proof}
+
+\begin{theorem}
+	Let E be a nonempty ssubset of an ordered set. Suppose $\alpha$ is a lower bound of E, $\beta$ an upper bound of E. Prove that $\alpha \leq \beta$.
+\end{theorem}
+
+\begin{proof}
+	$\alpha \leq x \leq \beta$ for all $x \in E$, then it follows that $\alpha \leq \beta$.
+\end{proof}
+
+\begin{theorem}
+	Let A be a nonempty set of real numbers which is bounded below. Let $-A$ be the set of $-x$ for $x \in A$. Prove that $\inf A = -\sup(-A)$.
+\end{theorem}
+
+\begin{proof}
+	Let B be the set of all lower bound of A. For all $\beta \in B$, $\beta \leq x$ for all x in A. Then $-x \leq -\beta$. So, $-B$ is the set of all upper bound of $-A$ and $\inf A \geq \beta$. This implies that $-\beta \leq - \inf A = - \sup(-A)$. As the infinum is the smallest upper bound for $-A$, it implies that $- \sup(-A) \leq \inf A$ and the result follows.
+\end{proof}
+
+\begin{theorem}
+	For $b > 1$, prove the following
+
+	(a) If $m,n,p,q$ are integers with $n >0$ and $q > 0$, $$r = \frac{m}{n} = \frac{p}{q} $$. Prove that $(b^{m})^{\frac{1}{n}} = (b^{p})^{\frac{1}{q}}$.
+
+	(b) Prove that $b^{r + s} = b^{r}b^{s}$ if $r,s$ are rational.
+
+	(c) If $x \in \mathbb{R}$, define $B(x) = \{ b^{t}: t \leq x \}$. Prove that $b^{r} = \sup B(r)$ when r is rational.
+
+	(d) Prove that $b^{r + s} = b^{r}b^{s}$ for all real number r,s.
+\end{theorem}
+
+\begin{theorem}
+	Prove that no order can be defined in the complex field that turn it into an ordered field.
+\end{theorem}
+\begin{proof}
+	Let $<$ be an order of $\mathbb{C}$, then either $i > 0 \implies i^{2} > 0$ or $-i > 0 \implies (-i)^{2} < 0$. In either case, the ordered will violate one of the axiom of an ordered field. 
+\end{proof}
+
+\begin{theorem}
+	Prove that $||x| - |y|| \leq |x - y|$
+\end{theorem}
+
+\begin{proof}
+	$$|x| = |x - y + y| \leq |x - y| + |y| \implies |x| - |y| \leq |x - y| $$
+\end{proof}
 \end{document}
 
