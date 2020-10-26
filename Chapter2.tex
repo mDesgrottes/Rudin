@@ -37,7 +37,7 @@
 \end{theorem}
 
 \begin{proof}
-	Let W be a set, then $W \bigcup \emptyset = W \implies \emptyset \subset W$
+	
 \end{proof}
 
 \begin{theorem}
@@ -45,7 +45,7 @@
 \end{theorem}
 
 \begin{proof}
-	For each $N \in \mathbb{N}$, the number of polynomials such that $n + |a_{0}| + |a_{1}| + ... + |a_{n}| = N$ is finite. Hence the number of roots of these polynomial is also finite. Let $U_{n,N}$ be the set of roots of polynomial such that $$n + |a_{0}| + |a_{1}| + ... + |a_{n}| = N $$ and let $U_{n} = \bigcup_{i = 1}^{\infty} U_{n,i}$. The map $$n + |a_{0}| + ... + |a_{n}| \to (n,a_{0},...,a_{n}) $$ ensure that $U_{n}$ is isomorphic to $\mathbb{Z}^{n + 1}$. $U_{n}$ and $\bigcup_{n = 1}^{\infty} U_{n}$ is countable.
+	For each $N \in \mathbb{N}$, the number of polynomials such that $n + |a_{0}| + |a_{1}| + ... + |a_{n}| = N$ is finite. Hence the number of roots of these polynomials is also finite. Let $U_{n,N}$ be the set of roots of polynomials such that $$n + |a_{0}| + |a_{1}| + ... + |a_{n}| = N $$ and let $U_{n} = \bigcup_{i = 1}^{\infty} U_{n,i}$. $U_{n}$ and $\bigcup_{n = 1}^{\infty} U_{n}$ is at most countable.
 \end{proof}
 
 \begin{theorem}
@@ -53,7 +53,7 @@
 \end{theorem}
 
 \begin{proof}
-	Let $A$ be the set of all algebraic numbers. A is countable. As $\mathbb{R}$ is uncountable, $\mathbb{R}$ cannot be a subset of A.
+	Let $A$ be the set of all algebraic numbers. A is countable. As $\mathbb{R}$ is uncountable, $\mathbb{R}$ cannot be a subset of A. Hence, there exists a $x \in \mathbb{R}$ with $x \in A^{c}$.
 \end{proof}
 
 \begin{theorem}
@@ -61,7 +61,7 @@
 \end{theorem}
 
 \begin{proof}
-	$\mathbb{R} = \mathbb{Q} \bigcup \mathbb{I}$ implies that $\mathbb{I}$ contains an uncountable set.
+	$\mathbb{R} = \mathbb{Q} \bigcup \mathbb{I}$ implies that $\mathbb{I}$ contains an uncountable set because $\mathbb{Q}$ is countable.
 \end{proof}
 
 \begin{theorem}
@@ -77,7 +77,7 @@
 \end{theorem}
 
 \begin{proof}
-	Let $\bigcup_{i = 1}^{\infty} U_{i}$ be an open cover of K. There exists $i$ such that $0 \in U_{i}$. This interval will contain infinitely many element of K. Thus, there are only finitely many number of elements not in $U_{i}$. The finite subcover $U_{i} \bigcup (\bigcup_{n = 1}^{m} U_{n})$ is finite subcover of K.
+	Let $\bigcup_{i = 1}^{\infty} U_{i}$ be an open cover of K. There exists $i \in \mathbb{N}$ such that $0 \in U_{i}$. This interval will contain infinitely many elements of K. Thus, there are only finitely many elements not in $U_{i}$. The subcover $U_{i} \bigcup (\bigcup_{n = 1}^{m} U_{n})$ is a finite subcover of K.
 \end{proof}
 
 \begin{theorem}
@@ -85,14 +85,14 @@
 \end{theorem}
 
 \begin{proof}
-	Let $U_{i} = \{ i + \frac{1}{n}: n \in \mathbb{N} \}$, then $\{0\} \bigcup \mathbb{N} \bigcup (\bigcup_{n = 1}^{\infty} U_{n})$
+	Let $U_{i} = \{ \frac{1}{i} + \frac{1}{n}: n \in \mathbb{N} \}$, then $\{0\} \bigcup (\bigcup_{n = 1}^{\infty} U_{n})$
 \end{proof}
 
 \begin{theorem}
 	Give an example of an open cover of $(0,1)$ which has no finite subcover.
 \end{theorem}
 \begin{proof}
-	$\bigcup_{n = 1}^{\infty} (0, 1 - \frac{1}{n})$
+	$\bigcup_{n = 1}^{\infty} (0, 1 + \frac{1}{n})$
 \end{proof}
 
 \begin{theorem}
@@ -105,7 +105,9 @@
 \end{theorem}
 
 \begin{proof}
-	(a) Closed sets contains their limit points and $A \bigcap \overline{B} = \overline{A} \bigcap B = \emptyset$. If A and B are disjoint open set, then their complement is closed and the result follows.
+	(a) Closed sets contains their limit points and $A \bigcap \overline{B} = \overline{A} \bigcap B = \emptyset$.
+
+	We exclude clopen sets as we proved the result for closed sets. Let A and B be open sets that are not closed and disjoint Let $p \in X$ be a limit point of A and B, then every neighborhood of p intersects A at a point other than p. Let $ U = (p - \epsilon,p + \epsilon) \bigcap A$ and $V = (p - \epsilon, p + \epsilon) \bigcap B$. $U \bigcap V \not = \emptyset$ because we can find an open set contained in $U \bigcup \{ p \}$. This would give rise to an open set containing p which only intersect B at p, a contradiction.
 
 	(b) $A = \{ x \in X: |x - p| < \delta \}$ and $B = \{x \in X: |x - p| > \delta \}$ are disjoint open sets and hence are seperated.
 
@@ -117,21 +119,23 @@
 \end{theorem}
 
 \begin{proof}
-	$\mathbb{Q}^{k}$ is a countable dense subset of $\mathbb{R}^{k}$.
+	Let $x \in \mathbb{Q}^{k}$, then $x = ( x_{1},....,x_{k})$. For each $x_{i}$, there exists a sequence $u_{i,n} \in \mathbb{Q}$ that converges to $x_{i}$. Therefore the sequence $u_{n} = (u_{1,n},...,u_{k,n})$ converges to x.  
+
+	$\mathbb{Q}^{k}$ is a countable dense subset of $\mathbb{R}^{k}$. 
 \end{proof}
 
 \begin{theorem}
 	Prove that every seperable metric space has a countable base.
 \end{theorem}
 \begin{proof}
-	The metric space have a countable dense subset $E$. Hence between any two elements in X, there exists an element of E. Take $(y - r, r + y)$ with r,y being rational. The set of these interval is countable and contains x.  
+	The seperable metric space X contains a dense countable subset E. Let $(x - \epsilon, x + \epsilon)$ be a neighborhood of x. Then the neighborhood $(y - r, y + r) \subset ( x - \epsilon, x + \epsilon)$ whenever $r < \epsilon$ and $|x - y| < r$. We choose r to be a rational number and $y \in E$. Hence the set $\bigcup_{y,r}N_{r}(y)$ is a countable base. 
 \end{proof}
 \begin{theorem}
 Let X be a metric space in which every infinite subset has a limit point. Prove that X is seperable.
 \end{theorem}
 
 \begin{proof}
-	Let $\delta > 0$, then we pick $x_{1} \in X$,a nd having chosen $x_{1},...,x_{j}$, we pick $x_{j + 1}$ such that $|x_{j} - x_{j + 1}| \geq \delta$. The sequence we chose is an infinite subset of X and has limit point. Therefore, it must terminate at a finite point. $U_{i} = (x_{i} - \delta, x_{i} + \delta)$ are finite open sets that cover X. The triangle inequality prevent any element of X to be too close to two points of $U_{i}$. Hence, every point in X belongs to at least one $U_{i}$. $\bigcup_{i = 1}^{\infty} U_{i}$ with $\delta = 1/n$ is a countable dense subset.
+	Let $\delta > 0$, then we pick $x_{1} \in X$, and having chosen $x_{1},...,x_{j}$, we pick $x_{j + 1}$ such that $|x_{j} - x_{j + 1}| \geq \delta$. The sequence we chose is an infinite subset of X and has limit point. The infinite subset has a sequence that converges to the limit points and the sequence is cauchy. Therefore, the sequence  must have finite range. $U_{i,n} = (x_{i} - \delta, x_{i} + \delta)$ are finite open sets that cover X. Hence, every point in X belongs to at least one $U_{i,n}$. Let $U_{n}$ be the set of all $\{ x_{i} \}$ for $\delta = 1/n$, then $U = \bigcup_{n = 1}^{\infty} U_{n}$ is at most countable. Let $x \in X$, then we will construct a sequence of of points as followed. $|x_{1} - x| < 1$, and $|x - x_{n}| < \frac{1}{n}$. For each n, $x \in \{ y : |x - y | < \frac{1}{n} \}$ and we can find $x_{n} \in U$ to be the point in our sequence. Hence, $U$ is dense in X and it is countable. $U$ is not finite as that would imply X is finite. 
 \end{proof}
 
 \begin{theorem}
@@ -139,7 +143,21 @@ Let X be a metric space in which every infinite subset has a limit point. Prove 
 \end{theorem}
 
 \begin{proof}
-	The set $A_{x} = ( x - \frac{1}{n}, x + \frac{1}{n})$ form an open cover of K and hence it contains a finite subcover. So, for each n, there exists a finite set of points such that neighborhood around those points with radius 1/n cover K. By previous exercise, it is seperable.
+	The set $A_{x} = ( x - \frac{1}{n}, x + \frac{1}{n})$ form an open cover of K and hence it contains a finite subcover. So, for each n, there exists a finite set of points such that neighborhood around those points with radius 1/n cover K. By previous exercise, it is seperable and it has a countable base.
+\end{proof}
+
+\begin{theorem}
+	Prove that the set of condensation points of $E \subset \mathbb{R}^{k}$ is perfect and that at most countably points in E is not in P.
+\end{theorem}
+
+\begin{proof}
+	Let $\{V_{i}\}$ be a countable base of $\mathbb{R}^{k}$, and define $W = \bigcup_{k = 1}^{\infty} V_{k}$ where $E \bigcap V_{k}$ is at most countable. Let $P$ be the set of condensation points of E. If $p \in P$ then the intersection of every neighborhood of p with E is uncountable. If $U$ is a neighborhood of p, then there exists $V_{k}$ such that $V_{k} \subset U$ which implies that $E \bigcap V_{k}$ is uncountable and $p \in W^{c}$. $P \subset W^{c}$.
+	
+	If $p \in W^{c}$, then $E \bigcap V_{i}$ is uncountable when $p \in V_{i}$. If $U$ is any neighborhood of p, then we can find $V_{i}$ that is contained in U. This implies that every neighborhood of p intersect E at an uncountable set and $p \in P$. We have shown that $P = W^{c}$.
+
+	We look at two sets $P \bigcap E$ and $P^{c} \bigcap E$. $P^{c} \bigcap E$ is at most countable because for every $p \in P^{c}$ we can find a neighborhood $U$ such that $E \bigcap U$ is countable. As E is uncountable, $P \bigcap E$ is uncountable.
+
+	Suppose that $P$ is not perfect, then we can find a point p in P such that it is not a limit point of P. Let $N / \{ p \} \subset P^{c}$ intersect E at a countable set. $N \bigcup \{ p \}$ is countable which is a contradiction. Hence, $P$ is perfect.
 \end{proof}
 \end{document}
 

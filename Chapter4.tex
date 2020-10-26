@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage{amsmath}
+\renewcommand{\baselinestretch}{1.05}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\usepackage{amsmath,amsthm,verbatim,amssymb,amsfonts,amscd, graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{bigfoot} % to allow verbatim in footnote
+\usepackage[numbered,framed]{matlab-prettifier}
+\usepackage{filecontents}
+\usepackage{graphics}
+\topmargin0.0cm
+\headheight0.0cm
+\headsep0.0cm
+\oddsidemargin0.0cm
+\textheight23.0cm
+\textwidth16.5cm
+\footskip1.0cm
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem*{surfacecor}{Corollary 1}
+\newtheorem{conjecture}{Conjecture} 
+\newtheorem{question}{Question} 
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\title{Chapter 4}
+\author{Mike Desgrottes}
+\date{October 2020}
+
+\begin{document}
+\maketitle
+
+\begin{theorem}
+	Suppose $f$ is a real function defined on $\mathbb{R}$ which statisfies $$\lim_{h \to 0} [f(x + h) - f(x - h)]= 0 $$ for every real number x. Does this imply that f is continuous?
+\end{theorem}
+
+\begin{proof}
+	No, the function $f(x) = x^2$ if $x \not = 0$ and $f(0) = 1$. This function is discontinuous at 0.
+\end{proof}
+\end{document}
+
